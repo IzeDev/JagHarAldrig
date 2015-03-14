@@ -12,10 +12,15 @@ namespace JagHarAldrig.Utilities
 {
     public static class PhoneOrientationUtility
     {
+        static StatusBar statusbar;
+        static PhoneOrientationUtility()
+        {
+            statusbar = Windows.UI.ViewManagement.StatusBar.GetForCurrentView();
+
+        }
+
         public static async Task DetermineOrientation()
         {          
-            StatusBar statusbar = Windows.UI.ViewManagement.StatusBar.GetForCurrentView();
-
             if (Window.Current.CoreWindow.Bounds.Height > Window.Current.CoreWindow.Bounds.Width)
             {
                 await statusbar.ShowAsync();
@@ -27,10 +32,13 @@ namespace JagHarAldrig.Utilities
 
         }
 
+        public static async Task ResetOrientationToPortrait()
+        {
+            await statusbar.ShowAsync();
+        }
+
         public static async Task DetermineOrientation(Page page)
         {
-            StatusBar statusbar = Windows.UI.ViewManagement.StatusBar.GetForCurrentView();
-
             if (Window.Current.CoreWindow.Bounds.Height > Window.Current.CoreWindow.Bounds.Width)
             {
                 VisualStateManager.GoToState(page, "Portrait", true);
@@ -41,8 +49,6 @@ namespace JagHarAldrig.Utilities
                 VisualStateManager.GoToState(page, "Landscape", true);
                 await statusbar.HideAsync();
             }
-
         }
-
     }
 }
