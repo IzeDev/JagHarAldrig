@@ -26,10 +26,6 @@ namespace JagHarAldrig.Pages
         {
             gameStatements.Reverse();
 
-            int finalIndexForZeroIndex = RandomUtility.GenerateNumber(4,
-                gameStatements.Count / 2);
-            gameStatements.Reverse(0, finalIndexForZeroIndex);
-
             for (int i = 0; i < 100; i++)
             {
                 int initialReverseIndex = RandomUtility.GenerateNumber(0,

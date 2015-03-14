@@ -6,16 +6,19 @@ namespace JagHarAldrig.Utilities
 {
     public static class RandomUtility
     {
-        static Random random;
-
-        static RandomUtility()
-        {
-            random = new Random();
-        }
+        static Random random = new Random();
+        static int lastValue;
 
         public static int GenerateNumber(int from, int to)
         {
-            return random.Next(from, to + 1);
+            int value;
+            do
+            {
+                value = random.Next(from, to);
+            }
+            while (value == lastValue);
+            lastValue = value;
+            return value;
         }
     }
 }

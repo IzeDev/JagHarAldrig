@@ -21,8 +21,7 @@
                    Style="{StaticResource HeaderTextBlockStyle}"
                    />
         <Grid Name="contentGrid" Grid.Row="1"
-              Tapped="contentGrid_Tapped"
-              
+              Tapped="contentGrid_Tapped"             
               >
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
