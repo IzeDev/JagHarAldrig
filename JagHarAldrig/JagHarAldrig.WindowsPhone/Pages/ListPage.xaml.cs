@@ -39,6 +39,11 @@ namespace JagHarAldrig.Pages
                 e.Handled = true;
                 Frame.GoBack();
             }
+        }
+
+        private void Page_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            // Build error unless this is here.
         } 
     }
 }

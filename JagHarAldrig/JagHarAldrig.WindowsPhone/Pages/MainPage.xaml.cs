@@ -28,5 +28,10 @@ namespace JagHarAldrig.Pages
             this.InitializeComponent();
             DisplayInformation.AutoRotationPreferences = DisplayOrientations.Portrait;
         }
+
+        private void Page_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            // Build error unless this is here.
+        }
     }
 }
