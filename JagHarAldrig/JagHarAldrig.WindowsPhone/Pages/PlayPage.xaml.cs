@@ -43,5 +43,11 @@ namespace JagHarAldrig.Pages
             contentField.Width = Window.Current.CoreWindow.Bounds.Width - 20;
             await PhoneOrientationUtility.DetermineOrientation();
         }
+
+        protected override async void OnNavigatedFrom(NavigationEventArgs e)
+        {
+            await PhoneOrientationUtility.ResetOrientationToPortrait();
+            base.OnNavigatedFrom(e);
+        }
     }
 }

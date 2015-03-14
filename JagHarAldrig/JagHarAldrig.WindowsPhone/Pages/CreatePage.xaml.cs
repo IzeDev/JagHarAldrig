@@ -45,5 +45,11 @@ namespace JagHarAldrig.Pages
         {
             await PhoneOrientationUtility.DetermineOrientation(this);
         }
+
+        protected override async void OnNavigatedFrom(NavigationEventArgs e)
+        {
+            await PhoneOrientationUtility.ResetOrientationToPortrait();
+            base.OnNavigatedFrom(e);
+        }
     }
 }
