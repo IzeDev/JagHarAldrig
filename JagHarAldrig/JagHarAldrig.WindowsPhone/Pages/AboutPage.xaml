@@ -1,0 +1,45 @@
+﻿<Page
+    x:Class="JagHarAldrig.Pages.AboutPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:JagHarAldrig.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{StaticResource applicationBackground}">
+    
+    <Grid Margin="10,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <TextBlock
+            Text="Tack"
+            Style="{StaticResource HeaderTextBlockStyle}"
+            />      
+            <StackPanel Grid.Row="1">
+                <TextBlock
+                    Style="{StaticResource SubheaderTextBlockStyle}"
+                    FontSize="25"
+                    Margin="0,20,0,20"
+                    >
+                    Utan följande desginers från ''Thenounproject.com''
+                    <LineBreak/>så hade appen sett mycket tråkigare ut:"
+                </TextBlock>
+                <ListView Name="nameList"
+                          ItemsSource="{Binding}"
+                          Height="300"
+                          >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock
+                                Text="{Binding Value}"
+                                Style="{StaticResource SubheaderTextBlockStyle}"
+                                FontSize="21"
+                                />
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>    
+            </StackPanel>   
+    </Grid>   
+</Page>
