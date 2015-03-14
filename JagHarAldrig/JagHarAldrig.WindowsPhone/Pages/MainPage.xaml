@@ -7,41 +7,38 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{StaticResource applicationBackground}">
-    
-    <Viewbox Margin="10,0"
-             VerticalAlignment="Top">
-    	<VisualStateManager.VisualStateGroups>
-    		<VisualStateGroup x:Name="VisualStateGroup">
-    			<VisualState x:Name="Portrait"/>
-    			<VisualState x:Name="Landscape">
-    				<Storyboard>
-    					<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="textBlock">
-    						<DiscreteObjectKeyFrame KeyTime="0">
-    							<DiscreteObjectKeyFrame.Value>
-    								<Thickness>0,0,0,15</Thickness>
-    							</DiscreteObjectKeyFrame.Value>
-    						</DiscreteObjectKeyFrame>
-    					</ObjectAnimationUsingKeyFrames>
-    				</Storyboard>
-    			</VisualState>
-    		</VisualStateGroup>
-    	</VisualStateManager.VisualStateGroups>
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-            </Grid.RowDefinitions>
 
-            <TextBlock x:Name="textBlock"
+    <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup x:Name="VisualStateGroup">
+            <VisualState x:Name="Portrait"/>
+            <VisualState x:Name="Landscape">
+                <Storyboard>
+                    <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="textBlock">
+                        <DiscreteObjectKeyFrame KeyTime="0">
+                            <DiscreteObjectKeyFrame.Value>
+                                <Thickness>0,0,0,15</Thickness>
+                            </DiscreteObjectKeyFrame.Value>
+                        </DiscreteObjectKeyFrame>
+                    </ObjectAnimationUsingKeyFrames>
+                </Storyboard>
+            </VisualState>
+        </VisualStateGroup>
+    </VisualStateManager.VisualStateGroups>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <TextBlock x:Name="textBlock"
                 Text="Jag har aldrig"
                 Style="{StaticResource mainPageHeaderTxt}"
                 HorizontalAlignment="Center"
                 />
+        <StackPanel Grid.Row="1">
             <Grid 
-                Name="Play" Grid.Row="1"
+                Name="Play"
                 Style="{StaticResource mainPageGridBtn}"
                 Tapped="Play_Tapped"
                 >
@@ -55,7 +52,7 @@
                                />
                 </StackPanel>
             </Grid>
-            <Grid Name="Create" Grid.Row="2" 
+            <Grid Name="Create"
                   Style="{StaticResource mainPageGridBtn}"
                   Tapped="Create_Tapped"
                   >
@@ -70,7 +67,7 @@
                         />
                 </StackPanel>
             </Grid>
-            <Grid Name="List" Grid.Row="3"
+            <Grid Name="List"
                   Style="{StaticResource mainPageGridBtn}"
                   Tapped="List_Tapped"
                   >
@@ -85,7 +82,7 @@
                         />
                 </StackPanel>
             </Grid>
-            <Grid Name="About" Grid.Row="4"
+            <Grid Name="About"
                   Style="{StaticResource mainPageGridBtn}"
                   Tapped="About_Tapped"                  
                   >
@@ -100,6 +97,6 @@
                         />
                 </StackPanel>
             </Grid>
-        </Grid>       
-    </Viewbox>    
+        </StackPanel>
+    </Grid>
 </Page>
