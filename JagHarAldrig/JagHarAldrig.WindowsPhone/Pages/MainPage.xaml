@@ -26,77 +26,78 @@
     </VisualStateManager.VisualStateGroups>
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-
         <TextBlock x:Name="textBlock"
-                Text="Jag har aldrig"
-                Style="{StaticResource mainPageHeaderTxt}"
-                HorizontalAlignment="Center"
-                />
-        <StackPanel Grid.Row="1">
-            <Grid 
-                Name="Play"
-                Style="{StaticResource mainPageGridBtn}"
-                Tapped="Play_Tapped"
-                >
-                <StackPanel Orientation="Horizontal">
-                    <Image Name="playImage"                         
-                           Source="{Binding}"
-                           Style="{StaticResource mainPageGridBtnImg}"
-                           />
-                    <TextBlock Text="Kör en runda" 
-                               Style="{StaticResource mainPageGridBtnTxt}"
+                   Text="Jag har aldrig"
+                   Style="{StaticResource mainPageHeaderTxt}"
+                   HorizontalAlignment="Center"
+                   />
+        <Viewbox Margin="10,0" Grid.Row="1">
+            <StackPanel>
+                <Grid 
+                    Name="Play"
+                    Style="{StaticResource mainPageGridBtn}"
+                    Tapped="Play_Tapped"
+                    >
+                    <StackPanel Orientation="Horizontal">
+                        <Image Name="playImage"                         
+                               Source="{Binding}"
+                               Style="{StaticResource mainPageGridBtnImg}"
                                />
-                </StackPanel>
-            </Grid>
-            <Grid Name="Create"
-                  Style="{StaticResource mainPageGridBtn}"
-                  Tapped="Create_Tapped"
-                  >
-                <StackPanel Orientation="Horizontal">
-                    <Image Name="createImage"
-                           Source="{Binding}"
-                           Style="{StaticResource mainPageGridBtnImg}"
-                           />
-                    <TextBlock
+                        <TextBlock Text="Kör en runda" 
+                                   Style="{StaticResource mainPageGridBtnTxt}"
+                                   />
+                    </StackPanel>
+                </Grid>
+                <Grid Name="Create"
+                      Style="{StaticResource mainPageGridBtn}"
+                      Tapped="Create_Tapped"
+                      >
+                    <StackPanel Orientation="Horizontal">
+                        <Image Name="createImage"
+                               Source="{Binding}"
+                               Style="{StaticResource mainPageGridBtnImg}"
+                               />
+                        <TextBlock
                         Text="Lägg till ett påstående" 
                         Style="{StaticResource mainPageGridBtnTxt}"
                         />
-                </StackPanel>
-            </Grid>
-            <Grid Name="List"
+                    </StackPanel>
+                </Grid>
+                <Grid Name="List"
                   Style="{StaticResource mainPageGridBtn}"
                   Tapped="List_Tapped"
                   >
-                <StackPanel Orientation="Horizontal">
-                    <Image Name="listImage"
+                    <StackPanel Orientation="Horizontal">
+                        <Image Name="listImage"
                            Style="{StaticResource mainPageGridBtnImg}"
                            Source="{Binding}"
                            />
-                    <TextBlock
-                        Text="Se sparade påståenden" 
-                        Style="{StaticResource mainPageGridBtnTxt}"
-                        />
-                </StackPanel>
-            </Grid>
-            <Grid Name="About"
-                  Style="{StaticResource mainPageGridBtn}"
-                  Tapped="About_Tapped"                  
-                  >
-                <StackPanel Orientation="Horizontal">
-                    <Image Name="aboutImage"
-                           Source="{Binding}"
-                           Style="{StaticResource mainPageGridBtnImg}"
-                           />
-                    <TextBlock
-                        Text="Läs om appen" 
-                        Style="{StaticResource mainPageGridBtnTxt}"
-                        />
-                </StackPanel>
-            </Grid>
-        </StackPanel>
+                        <TextBlock
+                            Text="Se sparade påståenden" 
+                            Style="{StaticResource mainPageGridBtnTxt}"
+                            />
+                    </StackPanel>
+                </Grid>
+                <Grid Name="About"
+                      Style="{StaticResource mainPageGridBtn}"
+                      Tapped="About_Tapped"                  
+                      >
+                    <StackPanel Orientation="Horizontal">
+                        <Image Name="aboutImage"
+                               Source="{Binding}"
+                               Style="{StaticResource mainPageGridBtnImg}"
+                               />
+                        <TextBlock
+                            Text="Läs om appen" 
+                            Style="{StaticResource mainPageGridBtnTxt}"
+                            />
+                    </StackPanel>
+                </Grid>
+            </StackPanel>
+        </Viewbox>
     </Grid>
 </Page>
