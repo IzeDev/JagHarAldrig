@@ -88,6 +88,7 @@
             <Grid Name="About" Grid.Row="4"
                   Style="{StaticResource mainPageGridBtn}"
                   Tapped="About_Tapped"
+                  
                   >
                 <StackPanel Orientation="Horizontal">
                     <Image Name="aboutImage"
